@@ -12,6 +12,6 @@ router.get("/", isAdminVerifier, CartController.get_carts);
 router.get("/:userId", authenticationVerifier, CartController.get_cart);
 router.post("/", authenticationVerifier, CartController.create_cart);
 router.put("/:id", accessLevelVerifier, CartController.update_cart);
-router.delete("/:id", accessLevelVerifier, CartController.delete_cart);
+router.delete("/:id", authenticationVerifier, CartController.delete_cart);
 
 module.exports = router;
